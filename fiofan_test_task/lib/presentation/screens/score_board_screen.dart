@@ -1,5 +1,10 @@
+import 'package:fiofan_test_task/presentation/widgets/menu_bar_item.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import '../widgets/custom_action_button.dart';
 import '../widgets/player_card.dart';
 
 class ScoreboardScreen extends StatelessWidget {
@@ -11,29 +16,207 @@ class ScoreboardScreen extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: const Text('fitofan', style: TextStyle(color: Colors.white)),
+        actions: [
+          Expanded(
+            child: Row(
+              children: [
+                SizedBox(width: MediaQuery.sizeOf(context).width * 0.05),
+                SizedBox(
+                  height: MediaQuery.sizeOf(context).width * 0.02,
+                  child: Row(
+                    children: [
+                      SvgPicture.asset('assets/logo.svg'),
+                      SizedBox(width: MediaQuery.sizeOf(context).width * 0.001),
+                      const Text(
+                        "fitofan",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ),
+                const Spacer(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    const MenuBarItem(image: 'assets/promo.svg', text: 'promo'),
+                    SizedBox(width: MediaQuery.sizeOf(context).width * 0.02),
+                    const MenuBarItem(
+                        image: 'assets/matches.svg', text: 'matches'),
+                    SizedBox(width: MediaQuery.sizeOf(context).width * 0.02),
+                    const MenuBarItem(
+                        image: 'assets/judges.svg', text: 'judges'),
+                    SizedBox(width: MediaQuery.sizeOf(context).width * 0.02),
+                    const MenuBarItem(
+                        image: 'assets/screen.svg', text: 'screen'),
+                    SizedBox(width: MediaQuery.sizeOf(context).width * 0.02),
+                    const MenuBarItem(
+                        image: 'assets/settings.svg', text: 'settings'),
+                  ],
+                ),
+                SizedBox(width: MediaQuery.sizeOf(context).width * 0.05),
+              ],
+            ),
+          ),
+        ],
       ),
       body: Row(
         children: [
+          SizedBox(width: MediaQuery.sizeOf(context).width * 0.05),
           Expanded(
             flex: 1,
             child: Column(
               children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Previous'),
+                const CustomActionButton(
+                  text: 'Previous',
+                  icon: Icons.arrow_back,
+                  isNtext: false,
                 ),
+                SizedBox(height: MediaQuery.sizeOf(context).width * 0.01),
                 Expanded(
-                  child: ListView.builder(
-                    itemCount: 5,
-                    itemBuilder: (context, index) {
-                      return const ListTile(
-                        title: Text('Zhou Emma',
-                            style: TextStyle(color: Colors.white)),
-                        subtitle: Text('Winner',
-                            style: TextStyle(color: Colors.yellow)),
-                      );
-                    },
+                  child: Container(
+                    padding: const EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[900],
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: ListView.builder(
+                      itemCount: 4,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Container(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.01,
+                                    // height: double.infinity,
+                                    alignment: Alignment.center,
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey[800],
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                    child: Text(
+                                      '${index + 1}',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 5.sp,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.01),
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          width:
+                                              MediaQuery.sizeOf(context).width,
+                                          // width: double.infinity,
+
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 4.0, vertical: 4.0),
+                                          decoration: BoxDecoration(
+                                            color: const Color(0xFF123897),
+                                            borderRadius:
+                                                BorderRadius.circular(5),
+                                          ),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Zhou Emma',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 5.sp,
+                                                ),
+                                              ),
+                                              const Spacer(),
+                                              Container(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 8.0,
+                                                        vertical: 4.0),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.orange,
+                                                  gradient:
+                                                      const LinearGradient(
+                                                    colors: [
+                                                      Color(0xFFEA9C0F),
+                                                      Color(0xFFED6B0E),
+                                                    ],
+                                                    begin: Alignment.topLeft,
+                                                    end: Alignment.bottomRight,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(2),
+                                                ),
+                                                child: Text(
+                                                  'Winner',
+                                                  style: TextStyle(
+                                                    fontSize: 3.sp,
+                                                    color: Colors.black,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(height: 4),
+                                        Container(
+                                          width:
+                                              MediaQuery.sizeOf(context).width,
+                                          // width: double.infinity,
+
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 4.0, vertical: 4.0),
+                                          decoration: BoxDecoration(
+                                            color: const Color(0xFFA80F2A),
+                                            borderRadius:
+                                                BorderRadius.circular(5),
+                                          ),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Zhou Emma',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 5.sp,
+                                                ),
+                                              ),
+                                              const Spacer(),
+                                              const SizedBox.shrink(),
+                                            ],
+                                          ),
+                                        ),
+                                        // const SizedBox(height: 4),
+                                        // Drawer(
+                                        //     width: MediaQuery.sizeOf(context)
+                                        //         .width),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                  height:
+                                      MediaQuery.sizeOf(context).width * 0.01),
+                              Container(
+                                width: MediaQuery.sizeOf(context).width,
+                                height: 0.5,
+                                color: Colors.white.withOpacity(0.1),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
                 ElevatedButton(
@@ -43,42 +226,23 @@ class ScoreboardScreen extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(width: MediaQuery.sizeOf(context).width * 0.01),
           Expanded(
             flex: 3,
             child: Column(
               children: [
                 Container(
-                  color: Colors.black,
                   padding: const EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.5),
+                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
+                      Text(
                         '#5 Day 1, Dojang 1, №1 All. Poomsae',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      Row(
-                        children: [
-                          IconButton(
-                            icon: const Icon(Icons.volume_up,
-                                color: Colors.white),
-                            onPressed: () {},
-                          ),
-                          IconButton(
-                            icon: const Icon(Icons.sports_martial_arts,
-                                color: Colors.white),
-                            onPressed: () {},
-                          ),
-                          IconButton(
-                            icon: const Icon(Icons.tv, color: Colors.white),
-                            onPressed: () {},
-                          ),
-                          IconButton(
-                            icon:
-                                const Icon(Icons.settings, color: Colors.white),
-                            onPressed: () {},
-                          ),
-                        ],
+                        style: TextStyle(color: Colors.white.withOpacity(0.5)),
                       ),
                     ],
                   ),
@@ -88,14 +252,14 @@ class ScoreboardScreen extends StatelessWidget {
                     children: [
                       const PlayerCard(
                         name: 'Shirin Shirinov',
-                        imageUrl: 'https://via.placeholder.com/150',
+                        imageUrl: 'assets/shirin_shirinov.svg',
                         team: 'Poomsae Ukrainian Federation',
                         coach: 'Чебан (Cheban) B.',
                         backgroundColor: Colors.blue,
                       ),
                       const PlayerCard(
                         name: 'Shirin Shirinov',
-                        imageUrl: 'https://via.placeholder.com/150',
+                        imageUrl: 'assets/shirin_shirinov_1.svg',
                         team: 'Poomsae Ukrainian Federation',
                         coach: 'Чебан (Cheban) B.',
                         backgroundColor: Colors.red,
@@ -128,22 +292,26 @@ class ScoreboardScreen extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(width: MediaQuery.sizeOf(context).width * 0.01),
           Expanded(
             flex: 1,
             child: Column(
               children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Next'),
+                const CustomActionButton(
+                  text: 'Next',
+                  icon: Icons.arrow_forward,
+                  isNtext: true,
                 ),
                 Expanded(
                   child: ListView.builder(
                     itemCount: 5,
                     itemBuilder: (context, index) {
-                      return const ListTile(
-                        title: Text('Zhou Emma',
+                      return ListTile(
+                        leading: SvgPicture.asset('assets/promo.svg',
+                            width: 40, height: 40),
+                        title: const Text('Zhou Emma',
                             style: TextStyle(color: Colors.white)),
-                        subtitle: Text('Winner',
+                        subtitle: const Text('Winner',
                             style: TextStyle(color: Colors.yellow)),
                       );
                     },
@@ -152,6 +320,7 @@ class ScoreboardScreen extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(width: MediaQuery.sizeOf(context).width * 0.05),
         ],
       ),
     );
