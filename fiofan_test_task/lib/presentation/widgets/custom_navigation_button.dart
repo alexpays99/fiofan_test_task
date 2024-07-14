@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomActionButton extends StatelessWidget {
-  const CustomActionButton({
+class CustomNavigationButton extends StatelessWidget {
+  const CustomNavigationButton({
     super.key,
     required this.text,
     required this.icon,
