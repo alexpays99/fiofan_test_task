@@ -124,7 +124,7 @@ class SectionListWidget extends StatelessWidget {
                                                       'Zhou Emma',
                                                       style: TextStyle(
                                                         color: Colors.white,
-                                                        fontSize: 5.sp,
+                                                        fontSize: 4.sp,
                                                       ),
                                                     ),
                                                     const Spacer(),
@@ -199,7 +199,7 @@ class SectionListWidget extends StatelessWidget {
                                                       'Zhou Emma',
                                                       style: TextStyle(
                                                         color: Colors.white,
-                                                        fontSize: 5.sp,
+                                                        fontSize: 4.sp,
                                                       ),
                                                     ),
                                                     const Spacer(),
