@@ -1,5 +1,6 @@
 import 'package:fiofan_test_task/presentation/widgets/menu_bar_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Header extends StatelessWidget {
@@ -19,10 +20,13 @@ class Header extends StatelessWidget {
               children: [
                 SvgPicture.asset('assets/logo.svg'),
                 SizedBox(width: MediaQuery.sizeOf(context).width * 0.001),
-                const Text(
+                Text(
                   "fitofan",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.white),
+                    fontSize: 6.sp,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),
@@ -32,13 +36,13 @@ class Header extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               const MenuBarItem(image: 'assets/promo.svg', text: 'promo'),
-              SizedBox(width: MediaQuery.sizeOf(context).width * 0.02),
+              SizedBox(width: MediaQuery.sizeOf(context).width * 0.01),
               const MenuBarItem(image: 'assets/matches.svg', text: 'matches'),
-              SizedBox(width: MediaQuery.sizeOf(context).width * 0.02),
+              SizedBox(width: MediaQuery.sizeOf(context).width * 0.01),
               const MenuBarItem(image: 'assets/judges.svg', text: 'judges'),
-              SizedBox(width: MediaQuery.sizeOf(context).width * 0.02),
+              SizedBox(width: MediaQuery.sizeOf(context).width * 0.01),
               const MenuBarItem(image: 'assets/screen.svg', text: 'screen'),
-              SizedBox(width: MediaQuery.sizeOf(context).width * 0.02),
+              SizedBox(width: MediaQuery.sizeOf(context).width * 0.01),
               const MenuBarItem(image: 'assets/settings.svg', text: 'settings'),
             ],
           ),

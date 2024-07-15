@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MenuBarItem extends StatelessWidget {
@@ -25,8 +26,11 @@ class MenuBarItem extends StatelessWidget {
         ),
         Text(
           text,
-          style: const TextStyle(
-              color: Colors.white, fontSize: 14, fontWeight: FontWeight.w200),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 5.sp,
+            fontWeight: FontWeight.w200,
+          ),
         )
       ],
     );
