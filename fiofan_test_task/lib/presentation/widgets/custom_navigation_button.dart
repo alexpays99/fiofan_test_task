@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomNavigationButton extends StatelessWidget {
   const CustomNavigationButton({
@@ -14,50 +15,47 @@ class CustomNavigationButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {},
-      style: ButtonStyle(
-        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-          const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+        decoration: BoxDecoration(
+          color: Colors.white.withOpacity(0.3),
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
         ),
-        foregroundColor:
-            MaterialStateProperty.all<Color>(Colors.white.withOpacity(0.5)),
-        backgroundColor:
-            MaterialStateProperty.all<Color>(Colors.white.withOpacity(0.5)),
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-          const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(10),
-            ),
-          ),
-        ),
+        child: isNtext
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    text,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 5.sp,
+                    ),
+                  ),
+                  SizedBox(width: MediaQuery.sizeOf(context).width * 0.01),
+                  Icon(icon, size: 5.sp, color: Colors.white),
+                ],
+              )
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(icon, size: 5.sp, color: Colors.white),
+                  SizedBox(width: MediaQuery.sizeOf(context).width * 0.01),
+                  Text(
+                    text,
+                    // 'Previous',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 5.sp,
+                    ),
+                  ),
+                ],
+              ),
       ),
-      child: isNtext
-          ? Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  text,
-                  style: const TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.w400),
-                ),
-                SizedBox(width: MediaQuery.sizeOf(context).width * 0.01),
-                Icon(icon, size: 20, color: Colors.white),
-              ],
-            )
-          : Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(icon, size: 20, color: Colors.white),
-                SizedBox(width: MediaQuery.sizeOf(context).width * 0.01),
-                Text(
-                  text,
-                  // 'Previous',
-                  style: const TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.w400),
-                ),
-              ],
-            ),
     );
   }
 }

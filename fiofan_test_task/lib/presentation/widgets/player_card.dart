@@ -1,7 +1,5 @@
-import 'package:fiofan_test_task/presentation/widgets/custom_acttion_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PlayerCard extends StatelessWidget {

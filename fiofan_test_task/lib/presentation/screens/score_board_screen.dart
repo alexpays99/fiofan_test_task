@@ -31,17 +31,42 @@ class ScoreboardScreen extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0, vertical: 16.0),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.5),
-                    borderRadius: const BorderRadius.all(Radius.circular(10)),
-                  ),
+                      color: Colors.white.withOpacity(0.1),
+                      borderRadius: const BorderRadius.all(Radius.circular(10)),
+                      border: Border.all(
+                        color: Colors.white.withOpacity(0.1),
+                      )),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.2),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(4)),
+                        ),
+                        child: Text(
+                          '#5',
+                          style: TextStyle(
+                            color: Colors.white.withOpacity(0.5),
+                            fontWeight: FontWeight.w400,
+                            fontSize: 6.sp,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: MediaQuery.sizeOf(context).width * 0.01),
                       Text(
-                        '#5 Day 1, Dojang 1, №1 All. Poomsae',
-                        style: TextStyle(color: Colors.white.withOpacity(0.5)),
+                        'Day 1, Dojang 1, №1 All. Poomsae',
+                        // 'Previous',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.5),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 6.sp,
+                        ),
                       ),
                     ],
                   ),
