@@ -63,14 +63,26 @@ class ScoreboardScreen extends StatelessWidget {
                             team: 'Poomsae Ukrainian Federation',
                             coach: 'Чебан (Cheban) B.',
                             backgroundColor: Colors.blue,
+                            colors: [
+                              Color(0xFF0C2052),
+                              Color(0xFF163692),
+                            ],
                           ),
+                          SizedBox(
+                              height: MediaQuery.sizeOf(context).height * 0.02),
                           const PlayerCard(
                             name: 'Shirin Shirinov',
                             imageUrl: 'assets/shirin_shirinov_1.png',
                             team: 'Poomsae Ukrainian Federation',
                             coach: 'Чебан (Cheban) B.',
                             backgroundColor: Colors.red,
+                            colors: [
+                              Color(0xFF460E1A),
+                              Color(0xFFA20F29),
+                            ],
                           ),
+                          SizedBox(
+                              height: MediaQuery.sizeOf(context).height * 0.02),
                           IntrinsicHeight(
                             child: Row(
                               children: [
