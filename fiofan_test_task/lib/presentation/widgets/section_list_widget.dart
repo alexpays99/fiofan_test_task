@@ -25,7 +25,7 @@ class SectionListWidget extends StatefulWidget {
 
 class _SectionListWidgetState extends State<SectionListWidget> {
   final ScrollController _scrollController = ScrollController();
-  List<String> _filterList = ['50 kg', 'Male', 'Yellow Belt'];
+  final List<String> _filterList = ['50 kg', 'Male', 'Yellow Belt'];
   int _activeIndex = -1;
 
   @override
@@ -81,8 +81,8 @@ class _SectionListWidgetState extends State<SectionListWidget> {
                                   final item = _filterList[index];
 
                                   return Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 8.0, vertical: 4.0),
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 1.sp, vertical: 3.sp),
                                     child: GestureDetector(
                                       onTap: () {
                                         setState(() {
