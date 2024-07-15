@@ -69,142 +69,149 @@ class SectionListWidget extends StatelessWidget {
                               padding: const EdgeInsets.only(bottom: 8.0),
                               child: Column(
                                 children: [
-                                  Row(
-                                    children: [
-                                      Container(
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                0.01,
-                                        // height: double.infinity,
-                                        alignment: Alignment.center,
-                                        decoration: BoxDecoration(
-                                          color: Colors.grey[800],
-                                          borderRadius:
-                                              BorderRadius.circular(5),
-                                        ),
-                                        child: Text(
-                                          '${index + 1}',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 5.sp,
-                                            fontWeight: FontWeight.w300,
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
+                                  IntrinsicHeight(
+                                    child: Row(
+                                      children: [
+                                        Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
-                                                  0.01),
-                                      Expanded(
-                                        child: Column(
-                                          children: [
-                                            Container(
-                                              width: MediaQuery.sizeOf(context)
-                                                  .width,
-                                              // width: double.infinity,
-
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 4.0,
-                                                      vertical: 4.0),
-                                              decoration: BoxDecoration(
-                                                color: const Color(0xFF123897),
-                                                borderRadius:
-                                                    BorderRadius.circular(5),
-                                              ),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Text(
-                                                    'Zhou Emma',
-                                                    style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 5.sp,
-                                                    ),
-                                                  ),
-                                                  const Spacer(),
-                                                  hasInnerButton
-                                                      ? Container(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .symmetric(
-                                                                  horizontal:
-                                                                      8.0,
-                                                                  vertical:
-                                                                      4.0),
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color:
-                                                                Colors.orange,
-                                                            gradient:
-                                                                const LinearGradient(
-                                                              colors: [
-                                                                Color(
-                                                                    0xFFEA9C0F),
-                                                                Color(
-                                                                    0xFFED6B0E),
-                                                              ],
-                                                              begin: Alignment
-                                                                  .topLeft,
-                                                              end: Alignment
-                                                                  .bottomRight,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        2),
-                                                          ),
-                                                          child: Text(
-                                                            'Winner',
-                                                            style: TextStyle(
-                                                              fontSize: 3.sp,
-                                                              color:
-                                                                  Colors.black,
-                                                            ),
-                                                          ),
-                                                        )
-                                                      : const SizedBox.shrink(),
-                                                ],
-                                              ),
+                                                  0.03,
+                                          // height: double.infinity,
+                                          alignment: Alignment.center,
+                                          decoration: BoxDecoration(
+                                            color: Colors.grey[800],
+                                            borderRadius:
+                                                BorderRadius.circular(5),
+                                          ),
+                                          child: Text(
+                                            '${index + 1}',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 5.sp,
+                                              fontWeight: FontWeight.w300,
                                             ),
-                                            const SizedBox(height: 4),
-                                            Container(
-                                              width: MediaQuery.sizeOf(context)
-                                                  .width,
-                                              // width: double.infinity,
-
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 4.0,
-                                                      vertical: 4.0),
-                                              decoration: BoxDecoration(
-                                                color: const Color(0xFFA80F2A),
-                                                borderRadius:
-                                                    BorderRadius.circular(5),
-                                              ),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Text(
-                                                    'Zhou Emma',
-                                                    style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 5.sp,
-                                                    ),
-                                                  ),
-                                                  const Spacer(),
-                                                  const SizedBox.shrink(),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                        SizedBox(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                0.01),
+                                        Expanded(
+                                          child: Column(
+                                            children: [
+                                              Container(
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                        .width,
+                                                // width: double.infinity,
+
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 4.0,
+                                                        vertical: 4.0),
+                                                decoration: BoxDecoration(
+                                                  color:
+                                                      const Color(0xFF123897),
+                                                  borderRadius:
+                                                      BorderRadius.circular(5),
+                                                ),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Text(
+                                                      'Zhou Emma',
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 5.sp,
+                                                      ),
+                                                    ),
+                                                    const Spacer(),
+                                                    hasInnerButton
+                                                        ? Container(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                    .symmetric(
+                                                                    horizontal:
+                                                                        8.0,
+                                                                    vertical:
+                                                                        4.0),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color:
+                                                                  Colors.orange,
+                                                              gradient:
+                                                                  const LinearGradient(
+                                                                colors: [
+                                                                  Color(
+                                                                      0xFFEA9C0F),
+                                                                  Color(
+                                                                      0xFFED6B0E),
+                                                                ],
+                                                                begin: Alignment
+                                                                    .topLeft,
+                                                                end: Alignment
+                                                                    .bottomRight,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          2),
+                                                            ),
+                                                            child: Text(
+                                                              'Winner',
+                                                              style: TextStyle(
+                                                                fontSize: 3.sp,
+                                                                color: Colors
+                                                                    .black,
+                                                              ),
+                                                            ),
+                                                          )
+                                                        : const SizedBox
+                                                            .shrink(),
+                                                  ],
+                                                ),
+                                              ),
+                                              const SizedBox(height: 4),
+                                              Container(
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                        .width,
+                                                // width: double.infinity,
+
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 4.0,
+                                                        vertical: 4.0),
+                                                decoration: BoxDecoration(
+                                                  color:
+                                                      const Color(0xFFA80F2A),
+                                                  borderRadius:
+                                                      BorderRadius.circular(5),
+                                                ),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Text(
+                                                      'Zhou Emma',
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 5.sp,
+                                                      ),
+                                                    ),
+                                                    const Spacer(),
+                                                    const SizedBox.shrink(),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                   SizedBox(
                                       height: MediaQuery.sizeOf(context).width *
