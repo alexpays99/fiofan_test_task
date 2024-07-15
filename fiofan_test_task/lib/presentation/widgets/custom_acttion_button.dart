@@ -36,8 +36,8 @@ class CustomActionButton extends StatelessWidget {
             text,
             style: TextStyle(
               color: Colors.white,
-              fontWeight: FontWeight.w400,
-              fontSize: 3.sp,
+              fontWeight: FontWeight.w300,
+              fontSize: 4.sp,
             ),
           ),
         ],

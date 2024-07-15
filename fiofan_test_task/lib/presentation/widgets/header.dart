@@ -15,15 +15,15 @@ class Header extends StatelessWidget {
         children: [
           SizedBox(width: MediaQuery.sizeOf(context).width * 0.05),
           SizedBox(
-            height: MediaQuery.sizeOf(context).width * 0.02,
+            height: MediaQuery.sizeOf(context).width * 0.05,
             child: Row(
               children: [
                 SvgPicture.asset('assets/logo.svg'),
-                SizedBox(width: MediaQuery.sizeOf(context).width * 0.001),
+                SizedBox(width: MediaQuery.sizeOf(context).width * 0.01),
                 Text(
                   "fitofan",
                   style: TextStyle(
-                    fontSize: 6.sp,
+                    fontSize: 10.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
