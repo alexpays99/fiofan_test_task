@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class PlayerCard extends StatelessWidget {
   final String name;
@@ -23,9 +22,10 @@ class PlayerCard extends StatelessWidget {
       color: backgroundColor,
       margin: const EdgeInsets.symmetric(vertical: 8.0),
       padding: const EdgeInsets.all(16.0),
+      height: MediaQuery.sizeOf(context).height * 0.2,
       child: Row(
         children: [
-          SvgPicture.asset(imageUrl, width: 100, height: 100),
+          Image.asset(imageUrl, width: 100, height: 100),
           const SizedBox(width: 16),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
